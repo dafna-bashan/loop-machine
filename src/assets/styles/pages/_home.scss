@@ -1,0 +1,41 @@
+.home {
+    height    : 100%;
+    margin-top: 40px;
+    text-align: center;
+
+    h1 {
+        color    : white;
+        font-size: rem(40px);
+    }
+
+    a {
+        height             : 300px;
+        width              : 300px;
+        border-radius      : 50%;
+        margin-top         : 30px;
+        color              : inherit;
+        font-size          : rem(25px);
+        padding            : 6px 35px;
+        // border-radius   : 40px;
+        background-color   : #00b5b4;
+        border             : none;
+        transition         : 0.3s;
+        line-height        : 270px;
+        &:hover {
+            border: 1px solid whitesmoke;
+            color : whitesmoke;
+
+        }
+    }
+}
+
+@media (max-width: $narrow-breakpoint) {
+    .home {
+        a {
+            height             : 220px;
+            width              : 220px;
+            line-height        : 200px;
+
+        }
+    }
+}

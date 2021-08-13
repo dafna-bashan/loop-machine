@@ -1,0 +1,15 @@
+.loop-list {
+    display              : grid;
+    grid-template-columns: repeat(3, minmax(100px, 200px));
+    grid-auto-rows       : minmax(100px, 150px);
+    gap                  : 10px;
+    margin: 30px 0;
+}
+
+
+@media (max-width: $narrow-breakpoint) {
+    .loop-list{
+    grid-auto-rows       : 100px;
+
+    }
+}

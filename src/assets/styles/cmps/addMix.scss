@@ -1,0 +1,19 @@
+.add-mix {
+    margin-bottom: 30px;
+background-color: #fff;
+border-radius: 5px;
+    input {
+        padding: 10px 10px;
+        border: transparent;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #00b5b4;
+        border-radius   : 5px;
+        border: 1px solid whitesmoke;
+        &:hover {
+            color : whitesmoke;
+        }
+    }
+}

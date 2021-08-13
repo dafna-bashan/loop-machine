@@ -1,0 +1,63 @@
+.loop-preview {
+    cursor          : pointer;
+    border-radius   : 5px;
+    padding         : 10px;
+    text-align      : center;
+    background-color: whitesmoke;
+    transition      : background-color 200ms linear;
+
+    &.active {
+        background-color: #00b5b4;
+        color           : whitesmoke;
+        font-family     : roboto-bold;
+
+        .pulse-circle {
+            position: absolute;
+            width           : 70px;
+            height          : 70px;
+            border-radius   : 50%;
+            opacity: 30%;
+            background-color: whitesmoke;
+            animation:heartbeat 1.5s ease-in-out infinite both
+        }
+    }
+}
+
+@media (max-width: $narrow-breakpoint) {
+    .loop-preview {
+        &.active {
+            .pulse-circle {
+                width           : 50px;
+                height          : 50px;
+            }
+        }
+    }
+}
+
+@keyframes heartbeat {
+    from {
+        transform                : scale(1);
+        transform-origin         : center center;
+        animation-timing-function: ease-out
+    }
+
+    10% {
+        transform                : scale(.91);
+        animation-timing-function: ease-in
+    }
+
+    17% {
+        transform                : scale(.98);
+        animation-timing-function: ease-out
+    }
+
+    33% {
+        transform                : scale(.87);
+        animation-timing-function: ease-in
+    }
+
+    45% {
+        transform                : scale(1);
+        animation-timing-function: ease-out
+    }
+}

@@ -1,0 +1,29 @@
+.control-btn{
+    .btn-wrapper{
+        background-color: #efefef;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button{
+            padding: 0;
+            box-sizing: border-box;
+            height: 30px;
+            width: 30px;
+            border-color: transparent transparent transparent #202020;
+            transition: 100ms all ease;
+            will-change: border-width;
+            cursor: pointer;
+            &.play{
+                border-style: solid;
+                border-width: 15px 0 15px 30px;
+            }
+            &.stop{
+                // border-style: double;
+                border-width: 0px 0 0px 30px;
+            }
+        }
+    }
+}
