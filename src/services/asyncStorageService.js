@@ -72,7 +72,7 @@ function query(entityType) {
             {
                 _id: 'Qu7a7',
                 name: 'Best mix',
-                isActive: false,
+                // isActive: false,
                 loops: [
                     { _id: 'J5jDA', name: 'Future funk beats', src: '../assets/audio/future-funk-beats.mp3', isActive: false },
                     { _id: 'tsm5A', name: 'Stutter breakbeats', src: '../assets/audio/stutter-breakbeats.mp3', isActive: false },
@@ -87,7 +87,7 @@ function query(entityType) {
             {
                 _id: "WN3lN",
                 name: "My mix",
-                isActive: false,
+                // isActive: false,
                 loops: [
                     { _id: "J5jDA", name: "Future funk beats", src: "../assets/audio/future-funk-beats.mp3", isActive: false },
                     { _id: "tsm5A", name: "Stutter breakbeats", src: "../assets/audio/stutter-breakbeats.mp3", isActive: true },
@@ -101,7 +101,7 @@ function query(entityType) {
             }, {
                 _id: "6YLaA",
                 name: "Demo",
-                isActive: false,
+                // isActive: false,
                 loops: [
                     { _id: "J5jDA", name: "Future funk beats", src: "../assets/audio/future-funk-beats.mp3", isActive: false },
                     { _id: "tsm5A", name: "Stutter breakbeats", src: "../assets/audio/stutter-breakbeats.mp3", isActive: false },
