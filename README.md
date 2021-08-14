@@ -1,70 +1,14 @@
-# Getting Started with Create React App
+Project description - Loop Machine
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a small frontend application consisting of loops. You can change any loop active state. There is a central play or stop button that activates or stops the playing loops. The app allows you to put together different loops, save them as mixes and delete them.
+I could not apply the synchronization of the loops so any loop will play immediately if its mode is set to active and the central button is activated.
 
-## Available Scripts
+I used the React JS library in conjunction with Redux's status management, including the Thunk Middleware since the service simulates asynchronous service.
+The app has a central state where the entities of the loop and mix exist, as well as a Boolean value that describes whether the active loops are playing.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The app has two pages. The home page that leads to the loop machine page. The loop machine page manages the interaction with the state and the service. It contains all the functions that manipulate the state. The information is transferred from the main page as a prop to the other components.
+The main page renders a number of components:
+* LoopControlBtn - The main button component that controls the playing or stoping the loops.
+* LoopList - The list of loops renders LoopPreview, preview for each loop.
+* AddMix - A component that allows you to add a new mix by saving the list of loops according to the current state.
+* Mixlist - The mix list renders MixPreview, a preview of each mix that can be clicked to change back the state of the loops according to that mix. it also allows the user to delete it from the list.
