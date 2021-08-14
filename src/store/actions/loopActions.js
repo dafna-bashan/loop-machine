@@ -10,12 +10,9 @@ export function loadItems(key) {
   return async dispatch => {
     try {
       const items = await loopService.query(key)
-      console.log('from actions', items);
       if(key === 'loops'){
-        console.log('set loops');
         dispatch({ type: 'SET_LOOPS', items })
       } else {
-        console.log('set mixes');
         dispatch({ type: 'SET_MIXES', items })
       }
     } catch (err) {

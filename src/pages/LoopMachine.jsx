@@ -2,34 +2,34 @@ import { useEffect, useState, useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { LoopControlBtn } from "../cmps/LoopControlBtn"
 import { LoopList } from "../cmps/LoopList"
-import { loadItems, togglePlay, updateLoop, addMix, loadMix, loadMixes, removeMix } from '../store/actions/loopActions'
+import { loadItems, togglePlay, updateLoop, addMix, loadMix, removeMix } from '../store/actions/loopActions'
 import { audioService } from "../services/audioService"
 import { AddMix } from "../cmps/AddMix"
 import { MixList } from "../cmps/MixList"
+
+// I tried to apply the interval but without success. 
+// The relevant code for the interval is in the comments.
 
 export const LoopMachine = () => {
 
     const isPlaying = useSelector(state => state.loopModule.isPlaying)
     const loops = useSelector(state => state.loopModule.loops)
     const mixes = useSelector(state => state.loopModule.mixes)
-    const [startCycle, setStartCycle] = useState(0)
+    // const [startCycle, setStartCycle] = useState(0)
     const dispatch = useDispatch()
-    const intervalId = useRef()
+    // const intervalId = useRef()
 
     useEffect(() => {
-        console.log('mounted');
         dispatch(loadItems('loops'))
         dispatch(loadItems('mixes'))
-        return () => {
-            clearInterval(intervalId.current)
-        }
+        // return () => {
+        //     clearInterval(intervalId.current)
+        // }
     }, [])
 
     useEffect(() => {
-        // console.log(loops);
         if (isPlaying) {
             playLoops()
-            // console.log('playing');
             // let counter = 0
             // intervalId.current = setInterval(() => {
             //     console.log();
@@ -41,7 +41,6 @@ export const LoopMachine = () => {
             //     counter++
             // }, 1000)
         } else {
-            // console.log('not playing');
             // clearInterval(intervalId.current)
             // setStartCycle(0)
             loops.forEach(loop => {
@@ -50,21 +49,13 @@ export const LoopMachine = () => {
         }
     }, [isPlaying])
 
-    useEffect(() => {
-        console.log('loops changed');
-        const activeLoops = loops.filter(loop => loop.isActive === true)
-        console.log(activeLoops);
-    }, [loops])
-
 
     const onTogglePlay = (isPlaying) => {
         dispatch(togglePlay(isPlaying))
     };
 
     const playLoops = () => {
-        console.log(loops);
         const activeLoops = loops.filter(loop => loop.isActive === true)
-        console.log(activeLoops);
         activeLoops.forEach(loop => {
             playLoop(loop)
         })
@@ -86,9 +77,7 @@ export const LoopMachine = () => {
     const toggleIsActive = (loop) => {
         const updatedLoop = { ...loop }
         updatedLoop.isActive = !updatedLoop.isActive
-        // console.log(updatedLoop.name, updatedLoop.isActive);
         dispatch(updateLoop(updatedLoop))
-        // playPauseLoop(updatedLoop)
         if (!updatedLoop.isActive) stopLoop(updatedLoop)
         else playLoop(updatedLoop)
 
@@ -104,7 +93,6 @@ export const LoopMachine = () => {
     }
 
     const onSetMix = (mix) =>{
-        // console.log('onset mix');
         dispatch(loadMix(mix))
     }
 

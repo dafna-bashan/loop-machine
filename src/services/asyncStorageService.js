@@ -114,7 +114,6 @@ function query(entityType) {
                     { _id: "I3IIL", name: "Silent star", src: "../assets/audio/silent-star.mp3", isActive: false }]
             }]
     }
-    console.log('from storage', entities);
     return Promise.resolve(entities)
 }
 

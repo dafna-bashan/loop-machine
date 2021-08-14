@@ -1,17 +1,13 @@
 // Setup
 @import 'setup/variables';
 @import 'setup/functions';
-@import 'setup/mixins';
 @import 'setup/typography';
 
 // Basics
 @import 'basics/reset';
 @import 'basics/helpers';
-@import 'basics/layout';
 @import 'basics/base';
 @import 'basics/buttons';
-@import 'basics/animation';
-
 
 
 // Pages
@@ -24,7 +20,6 @@
 // Components
 
 @import 'cmps/header';
-@import 'cmps/footer';
 @import 'cmps/loopPreview';
 @import 'cmps/loopList';
 @import 'cmps/loopControlBtn';
