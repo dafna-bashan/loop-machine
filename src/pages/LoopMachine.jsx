@@ -15,8 +15,8 @@ export const LoopMachine = () => {
     const isPlaying = useSelector(state => state.loopModule.isPlaying)
     const loops = useSelector(state => state.loopModule.loops)
     const mixes = useSelector(state => state.loopModule.mixes)
-    // const [startCycle, setStartCycle] = useState(0)
     const dispatch = useDispatch()
+    // const [startCycle, setStartCycle] = useState(0)
     // const intervalId = useRef()
 
     useEffect(() => {
@@ -91,13 +91,13 @@ export const LoopMachine = () => {
         }
         dispatch(addMix(newMix))
     }
+    
+    const onRemoveMix = (mixId) =>{
+        dispatch(removeMix(mixId))
+    }
 
     const onSetMix = (mix) =>{
         dispatch(loadMix(mix))
-    }
-
-    const onRemoveMix = (mixId) =>{
-        dispatch(removeMix(mixId))
     }
 
     const getAudioSrc = (loopName) => {

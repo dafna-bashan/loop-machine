@@ -15,8 +15,7 @@ export const AddMix = ({ onAddMix }) => {
                 ev.preventDefault()
                 onAddMix(name)
                 setName('')
-            }
-            }>
+            }}>
                 <input className="full" type="text" placeholder="Mix name" value={name} name="name" required onChange={handleChange} />
                 <button>Save</button>
             </form>

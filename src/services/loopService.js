@@ -22,8 +22,7 @@ function remove(itemId) {
 
 }
 async function add(item) {
-  const addedItem = storageService.post('mixes', item)
-  return addedItem
+  return storageService.post('mixes', item)
 }
 
 async function update(item) {

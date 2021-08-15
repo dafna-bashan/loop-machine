@@ -12,7 +12,6 @@ export function App() {
             {routes.map(route => <Route key={route.path} exact component={route.component} path={route.path} />)}
           </Switch>
         </main>
-        {/* <Footer/> */}
       </Router>
     </div>
   );
